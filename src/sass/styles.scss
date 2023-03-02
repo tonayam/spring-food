@@ -1,0 +1,133 @@
+// FONT FROM GOOGLE FONTS
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+
+@import "./variables";
+@import "./mixins";
+@import "./forms";
+
+// COMPONENT STYLES
+@import "../components/Navbar/navbar";
+@import "../components/Footer/footer";
+@import "../components/Page-Header/page-header";
+
+
+
+
+
+// PAGES STYLES
+@import "../pages/About/about";
+@import "../pages/Contact/contact";
+
+
+
+
+// RESETS
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1800px;
+    margin: auto;
+    color: $textColor;
+}
+
+p {
+    color: #61657a;
+    line-height: 26px;
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    align-self: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: 0.2s linear all;
+
+    &:hover {
+        color: $primaryColor;
+    }
+}
+
+input,
+textarea,
+select {
+    font-size: 16px;
+    outline: none;
+    border: none;
+}
+
+
+
+
+button,
+.button {
+    padding: 11px 30px;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 1px 1px rgba(123, 123, 123, 0.16);
+    color: #717171;
+    border: none;
+
+
+    &.green {
+        background-color: $primaryColor;
+        color: #FFFFFF;
+        transition: 0.2s linear all;
+
+        &:hover {
+            background: #3B3F46;
+        }
+    }
+}
+
+
+// UTILITY CLASSES
+.underline {
+    border: 1px solid #F2F3F3;
+}
+
+.color-mix {
+    width: 30px;
+    height: 11px;
+    @include flex(center, flex-start, row);
+    position: relative;
+
+    span {
+        width: 15px;
+        height: 11px;
+        margin-left: -1px;
+        border-radius: 136px;
+        // z-index: -3;
+
+        &.first {
+            background-color: #9dca00;
+        }
+
+        &.second {
+            background-color: #b9ea0f;
+            position: absolute;
+            right: 5px;
+        }
+    }
+}

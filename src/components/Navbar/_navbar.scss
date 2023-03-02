@@ -1,0 +1,110 @@
+nav {
+    padding: 0 14px;
+    height: 70px;
+    @include flex(center, space-between, row);
+    box-shadow: 0 3px 6px rgb(54 54 54 / 8%);
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 40;
+
+    .logo {
+        font-size: 1.5rem;
+        font-family: monospace;
+        margin-bottom: 10px;
+        color: $textColor;
+        cursor: pointer;
+    }
+
+    .links {
+        @include flex(center, flex-start, column);
+        position: fixed;
+        left: 0;
+        top: 70px;
+        width: 100%;
+        z-index: 2;
+        background: #ffffff;
+        height: 0;
+        overflow-y: hidden;
+        transition: linear 0.3s all;
+
+
+        li {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            transition: 0.2s linear all;
+            cursor: pointer;
+
+            &:hover {
+                color: $primaryColor;
+            }
+        }
+
+        &.show {
+            height: calc(100vh - 70px)
+        }
+    }
+
+    .hambugger {
+        @include flex(center, center, row);
+        font-size: 1.3rem;
+    }
+}
+
+@include for-phones {
+    nav {
+        padding: 0 24px;
+    }
+}
+
+@include for-tablet-potrait-up {
+    nav {
+        padding: 0 40px;
+
+        .logo {
+            font-size: 1.8rem;
+        }
+
+        .hambugger {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@include for-tablet-landscape-up {
+    nav {
+        padding: 0 60px;
+    }
+}
+
+@include for-desktop-up {
+    nav {
+        padding: 0 100px;
+        height: 90px;
+
+        .logo {
+            font-size: 2rem;
+        }
+
+        .links {
+            @include flex(center, flex-start, row);
+            position: relative;
+            width: auto;
+            top: 0;
+            height: auto;
+
+            li {
+                margin: 0 20px;
+                font-size: 1.3rem;
+            }
+        }
+
+        .hambugger {
+            display: none;
+        }
+    }
+}
+
+@include for-big-desktop-up {}
