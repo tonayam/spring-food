@@ -10,6 +10,10 @@ import product4 from './assets/product4.jpg';
 import product5 from './assets/product5.jpg';
 import product6 from './assets/product2.jpg';
 
+import service1 from './assets/service1.jpg';
+import service2 from './assets/service2.jpg';
+import service3 from './assets/service3.jpg';
+
 export const reviews = [
   {
     text: `Organically grown crops tend use natural fertilizer like manure to improve growth to plant as amet cons adip scing elited id lectus quis dui euismod con after.`,
@@ -70,5 +74,38 @@ export const allproducts = [
     name: `Rich Milk`,
     category: `milk`,
     image: product6,
+  },
+];
+
+export const services = [
+  {
+    name: `Fresh Fruits`,
+    desc: `Organically grown crops tend use natural fertilizers like manure to improve growth to plant . Animals raised organically are.`,
+    image: service1,
+  },
+  {
+    name: `Fresh Vegetable`,
+    desc: `Organically grown crops tend use natural fertilizers like manure to improve growth to plant . Animals raised organically are.`,
+    image: service2,
+  },
+  {
+    name: `Natural Wheats`,
+    desc: `Organically grown crops tend use natural fertilizers like manure to improve growth to plant . Animals raised organically are.`,
+    image: service3,
+  },
+  {
+    name: `Fresh Vegetable`,
+    desc: `Organically grown crops tend use natural fertilizers like manure to improve growth to plant . Animals raised organically are.`,
+    image: service2,
+  },
+  {
+    name: `Fresh Wheats`,
+    desc: `Organically grown crops tend use natural fertilizers like manure to improve growth to plant . Animals raised organically are.`,
+    image: service1,
+  },
+  {
+    name: `Fresh Fruits`,
+    desc: `Organically grown crops tend use natural fertilizers like manure to improve growth to plant . Animals raised organically are.`,
+    image: service3,
   },
 ];
