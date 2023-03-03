@@ -1,0 +1,176 @@
+.gallery-page {
+    .special-gallery {
+        padding: 100px 14px;
+
+        h6 {
+            color: $primaryColor;
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 5px 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .cont {
+            @include flex(center, center, row);
+        }
+
+        .filters {
+            overflow-x: scroll;
+            @include flex(center, flex-start, row);
+            margin-top: 50px;
+            padding-bottom: 20px;
+
+            button {
+                border: 1px solid #ccd2d7;
+                font-size: 15px;
+                margin: 0 10px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &.green {
+                    border: none;
+                }
+            }
+        }
+
+        .products {
+            @include grid(1, 1fr, 10px);
+            margin-top: 50px;
+
+            .product {
+                position: relative;
+                margin-bottom: 20px;
+
+                .img {
+                    @include flex(center, center, row);
+                }
+
+                .details {
+                    position: absolute;
+                    width: 100%;
+                    background: rgb(0, 0, 0, 0.5);
+                    color: #ffffff;
+                    bottom: 0px;
+                    padding: 10px;
+
+                    svg {
+                        display: none;
+                    }
+
+                    p {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include for-phones {
+    .gallery-page {
+        .special-gallery {
+            padding: 100px 24px;
+        }
+    }
+}
+
+@include for-tablet-potrait-up {
+    .gallery-page {
+        .special-gallery {
+            padding: 100px 40px;
+
+            h6 {
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+
+            h2 {
+                font-size: 2.3rem;
+            }
+
+            .filters {
+                @include flex(center, center, row);
+            }
+
+            .products {
+                @include grid(2, 1fr, 30px);
+                margin-top: 50px;
+            }
+        }
+    }
+}
+
+@include for-tablet-landscape-up {
+    .gallery-page {
+        .special-gallery {
+            padding: 100px 60px;
+        }
+    }
+}
+
+@include for-desktop-up {
+    .gallery-page {
+        .special-gallery {
+            padding: 100px;
+
+            h6 {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+                margin: 10px 0;
+            }
+
+            .filters {
+                overflow-x: auto;
+                @include flex(center, center, row);
+                padding-bottom: 0px;
+
+                button {
+
+                    width: 140px;
+                    padding: 16px 0;
+                    border-radius: 0;
+                }
+            }
+
+            .products {
+                @include grid(3, 1fr, 30px);
+
+                .product {
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+
+                    .details {
+                        height: 100%;
+                        @include flex(center, center, column);
+                        visibility: hidden;
+
+                        svg {
+                            display: block;
+                            font-size: 2rem;
+                            margin-bottom: 10px;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &:hover .details {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include for-big-desktop-up {}

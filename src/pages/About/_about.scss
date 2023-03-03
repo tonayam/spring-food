@@ -211,7 +211,104 @@
 
     // CUSTOMER REVIEWS
     .customer-reviews {
-        border: 2px solid red;
+        background: #F1F6FA;
+        padding: 100px 14px;
+
+        h6 {
+            color: $primaryColor;
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 5px 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .cont {
+            @include flex(center, center, row);
+        }
+
+        .container {
+            margin-top: 50px;
+
+            .customers {
+                display: none;
+            }
+
+            .reviews-cont {
+                .reviews {
+                    width: 100%;
+                    height: 250px;
+                    padding: 20px 0;
+                    position: relative;
+                    overflow: hidden;
+
+                    .review {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        opacity: 0;
+                        transition: 0.3s linear all;
+
+                        .customer {
+                            @include flex(center, flex-start, row);
+
+                            .img {
+                                background: $primaryColor;
+                                width: 90px;
+                                height: 90px;
+                                border-radius: 50%;
+                                @include flex(center, center, row);
+                                margin-right: 20px;
+                                margin-top: 10px;
+
+                                img {
+                                    border-radius: 50%;
+                                    margin-left: 8px;
+                                }
+                            }
+
+                            .info {
+                                h5 {
+                                    font-size: 1.3rem;
+                                    line-height: 30px;
+                                    font-weight: 500;
+                                }
+
+                                p {
+                                    color: $primaryColor;
+                                }
+                            }
+                        }
+
+                        &.prevSlide {
+                            transform: translateX(-100%);
+                        }
+
+                        &.nextSlide {
+                            transform: translateX(100%);
+                        }
+
+                        &.activeSlide {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .nav-btns {
+                    margin-top: 10px;
+
+                    svg {
+                        width: 30px;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -233,6 +330,11 @@
         // WORKING PROCESS
         .working-process {
             padding: 50px 24px;
+        }
+
+        // CUSTOMER REVIEWS
+        .customer-reviews {
+            padding: 100px 24px;
         }
     }
 }
@@ -299,6 +401,106 @@
                 @include grid(2, 1fr, 40px);
             }
         }
+
+        // CUSTOMER REVIEWS
+        .customer-reviews {
+            padding: 100px 40px;
+
+            h6 {
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+
+            h2 {
+                font-size: 2.3rem;
+            }
+
+            .container {
+                @include flex(center, space-between, row);
+
+                .customers {
+                    display: block;
+                    width: 50%;
+                    height: 500px;
+                    position: relative;
+
+                    img {
+                        border-radius: 50%;
+                        position: absolute;
+
+                        &:nth-child(1) {
+                            width: 220px;
+                            height: 220px;
+                            right: 0px;
+                            top: 100px;
+                            animation: translateYAnimation infinite 2.3s ease-in-out;
+                        }
+
+                        &:nth-child(2) {
+                            width: 100px;
+                            height: 100px;
+                            top: 0;
+                            left: 20px;
+                        }
+
+                        &:nth-child(3) {
+                            width: 130px;
+                            height: 130px;
+                            left: 0;
+                            top: 150px;
+                            animation: translateYAnimation infinite 2.3s ease-in-out;
+                        }
+
+                        &:nth-child(4) {
+                            width: 135px;
+                            height: 135px;
+                            top: 300px;
+                            left: 20px;
+                        }
+
+                    }
+
+                    @keyframes translateYAnimation {
+                        0% {
+                            -webkit-transform: translateY(-20px);
+                            transform: translateY(-20px);
+                        }
+
+                        50% {
+                            -webkit-transform: translateY(-10px);
+                            transform: translateY(-10px);
+                        }
+
+                        100% {
+                            -webkit-transform: translateY(-20px);
+                            transform: translateY(-20px);
+                        }
+                    }
+
+                }
+
+                .reviews-cont {
+                    width: 50%;
+                    padding: 0 0 0 20px;
+
+                    .reviews {
+                        .review {
+                            p {
+                                line-height: 28px
+                            }
+
+                            .customer {
+                                .info {
+                                    h5 {
+                                        font-size: 1.3rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -318,6 +520,11 @@
         // WORKING PROCESS
         .working-process {
             padding: 50px 60px;
+        }
+
+        // CUSTOMER REVIEWS
+        .customer-reviews {
+            padding: 100px 60px;
         }
     }
 }
@@ -407,6 +614,79 @@
                         right: -80px;
                         top: 30px;
                         object-fit: contain;
+                    }
+                }
+            }
+        }
+
+        // CUSTOMER REVIEWS
+        .customer-reviews {
+            padding: 100px;
+
+            h6 {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+                margin: 10px 0;
+            }
+
+            .container {
+                .customers {
+                    img {
+                        &:nth-child(1) {
+                            width: 350px;
+                            height: 350px;
+                            right: 30px;
+                            top: 50px;
+                        }
+
+                        &:nth-child(2) {
+                            width: 100px;
+                            height: 100px;
+                            left: 60px;
+                            top: 0;
+                        }
+
+                        &:nth-child(3) {
+                            width: 160px;
+                            height: 160px;
+                            left: 0;
+                            top: 150px;
+                        }
+
+                        &:nth-child(4) {
+                            width: 135px;
+                            height: 135px;
+                            left: 60px;
+                            top: 350px;
+                        }
+                    }
+                }
+
+                .reviews-cont {
+                    padding: 20px;
+
+                    .reviews {
+                        .review {
+                            p {
+                                font-size: 1.1rem;
+                                line-height: 32px
+                            }
+
+                            .customer {
+                                .info {
+                                    h5 {
+                                        font-size: 1.5rem;
+                                    }
+
+                                    p {
+                                        font-size: 1rem;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
