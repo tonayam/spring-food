@@ -1,0 +1,238 @@
+    .services-we-offer {
+        padding: 120px 14px;
+        background-color: #F6F8FF;
+
+        h6 {
+            color: $primaryColor;
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 5px 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .cont {
+            @include flex(center, center, row);
+        }
+
+        .container {
+            @include grid(1, 1fr, 10px);
+            margin-top: 50px;
+
+            .service {
+                transition: linear all 0.2s;
+                margin-bottom: 30px;
+
+                .img {
+                    @include flex(center, center, row);
+                }
+
+                .info {
+                    border: 1px solid #E0E2EC;
+                    padding: 30px 10px;
+
+                    h4 {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                .container {
+                    display: none;
+                }
+            }
+        }
+
+        .floating-images {
+            display: none;
+        }
+
+    }
+
+    @include for-phones {
+        .services-we-offer {
+            padding: 120px 24px;
+        }
+    }
+
+    @include for-tablet-potrait-up {
+        .services-we-offer {
+            padding: 120px 40px;
+            position: relative;
+
+            h6 {
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+
+            h2 {
+                font-size: 2.3rem;
+            }
+
+            .container {
+                @include grid(3, 1fr, 20px);
+
+                .service {
+                    margin-bottom: 0px;
+
+                    .info {
+                        padding: 30px 16px;
+                    }
+                }
+            }
+
+            .floating-images {
+                display: block;
+
+                img {
+                    width: 184px;
+                    height: 159px;
+                    position: absolute;
+                    z-index: 0;
+                    animation: floatUpDown 3s infinite linear;
+
+
+                    &:nth-child(1),
+                    &:nth-child(3) {
+                        top: 100px;
+
+                    }
+
+                    &:nth-child(2),
+                    &:nth-child(4) {
+                        bottom: 30px;
+                    }
+
+                    &:nth-child(1),
+                    &:nth-child(2) {
+                        left: 40px;
+                    }
+
+                    &:nth-child(3),
+                    &:nth-child(4) {
+                        right: 40px;
+                    }
+
+
+                    @keyframes floatUpDown {
+                        0% {
+                            transform: translateY(-24px);
+                            -webkit-transform: translateY(-24px);
+                        }
+
+                        50% {
+                            transform: translateY(-10px);
+                            -webkit-transform: translateY(-10px);
+                        }
+
+                        100% {
+                            transform: translateY(-24px);
+                            -webkit-transform: translateY(-24px);
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    @include for-tablet-landscape-up {
+        .services-we-offer {
+            padding: 120px 60px;
+        }
+    }
+
+    @include for-desktop-up {
+        .services-we-offer {
+            padding: 120px 100px;
+
+            h6 {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+                margin: 10px 0;
+            }
+
+            .container {
+                @include grid(3, 1fr, 40px);
+
+                .service {
+                    position: relative;
+
+                    .img {
+                        overflow: hidden;
+
+                        img {
+                            transition: 0.3s linear all;
+                        }
+                    }
+
+                    .info {
+                        padding: 30px;
+
+                        h4 {
+                            font-size: 1.5rem;
+                        }
+                    }
+
+                    .container {
+
+                        display: block;
+                        position: absolute;
+                        bottom: -16px;
+                        left: 24px;
+
+                        .arrow {
+                            padding: 10px;
+                            @include flex(center, center, row);
+                            border-radius: 50%;
+                            background-color: #E7EAEE;
+                            position: relative;
+                            transition: 0.3s linear all;
+                        }
+
+                        .line {
+                            height: 2px;
+                            background-color: $primaryColor;
+                            width: 0px;
+                            position: absolute;
+                            bottom: 16px;
+                            left: -23px;
+                            transition: 0.3s linear all;
+                        }
+                    }
+
+
+                    &:hover {
+                        .img {
+                            img {
+                                transform: scale(1.2);
+                            }
+                        }
+
+                        .container {
+
+                            .arrow {
+                                transform: translateX(270px);
+                                z-index: 3;
+                                background-color: $primaryColor;
+                                color: #ffffff;
+                            }
+
+                            .line {
+                                width: 350px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include for-big-desktop-up {}

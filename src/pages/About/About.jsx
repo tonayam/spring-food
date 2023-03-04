@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from '../../context/Context';
 import PageHeader from '../../components/Page-Header/PageHeader';
-import aboutHero from '../../assets/about-hero.jpg';
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -21,6 +20,8 @@ import customer2 from '../../assets/customer2.jpg';
 import customer3 from '../../assets/customer3.jpg';
 import customer4 from '../../assets/customer4.jpg';
 import { reviews } from '../../data';
+import OrganicFood from '../../components/Organic-Food/OrganicFood';
+import WorkingProcess from '../../components/Working-Process/WorkingProcess';
 
 const About = () => {
   const { resetPage } = useGlobalContext();
@@ -62,33 +63,9 @@ const About = () => {
   return (
     <main className='about-page'>
       <PageHeader pageTitle='About Us' />
-      <section className='intro'>
-        <div className='hero'>
-          <img src={aboutHero} alt='a woman arranging her vegetables' />
-        </div>
-        <div className='info'>
-          <h6>Welcome To Our Fuodborne Farms</h6>
-          <h2>Organic Food - Farm Fresh Produce Right To Your Door</h2>
-          <div className='color-mix'>
-            <span className='first'></span>
-            <span className='second'></span>
-          </div>
-          <h4>Natural Products</h4>
-          <p>
-            Organically grown crops tend to use natural fertilizers like manure
-            to improve plant growth. Animals raised organically are also not
-            given antibiotic organic hormones most commonly purchased organic .
-          </p>
-          <div className='underline'></div>
-          <h4>Wheat Cultivation</h4>
-          <p>
-            Organically grown crops tend to use natural fertilizers like manure
-            to improve plant growth. Animals raised organically are also not
-            given antibiotic organic hormones most commonly purchased organic .
-          </p>
-        </div>
-      </section>
+      <OrganicFood />
 
+      {/* OUR TEAM SECTION */}
       <section className='our-team'>
         <h6>Our Team Mamber</h6>
         <h2>Meet Our Farmers</h2>
@@ -158,84 +135,13 @@ const About = () => {
         </div>
       </section>
 
-      <section className='working-process'>
-        <h6>Working Process</h6>
-        <h2>How Does We Work</h2>
-        <div className='cont'>
-          <div className='color-mix'>
-            <span className='first'></span>
-            <span className='second'></span>
-          </div>
-        </div>
-        <div className='process'>
-          <div className='step'>
-            <div className='img'>
-              <img src={processOne} alt='first step' />
-              <p>01</p>
-            </div>
-            <h3>Step 01</h3>
-            <p>
-              Organically grown crops tend use natural fertilizers like manure
-              to improve growth to plant .
-            </p>
-            <img
-              src={curvedArrowDown}
-              alt='direction arrow'
-              className='curved-arrow'
-            />
-          </div>
+      {/* WORKING PROCESS SECTION */}
+      <WorkingProcess />
 
-          <div className='step'>
-            <div className='img'>
-              <img src={processTwo} alt='first step' />
-              <p>02</p>
-            </div>
-            <h3>Step 02</h3>
-            <p>
-              Organically grown crops tend use natural fertilizers like manure
-              to improve growth to plant .
-            </p>
-            <img
-              src={curvedArrowUp}
-              alt='direction arrow'
-              className='curved-arrow'
-            />
-          </div>
-
-          <div className='step'>
-            <div className='img'>
-              <img src={processThree} alt='first step' />
-              <p>03</p>
-            </div>
-            <h3>Step 03</h3>
-            <p>
-              Organically grown crops tend use natural fertilizers like manure
-              to improve growth to plant .
-            </p>
-            <img
-              src={curvedArrowDown}
-              alt='direction arrow'
-              className='curved-arrow down'
-            />
-          </div>
-
-          <div className='step'>
-            <div className='img'>
-              <img src={processFour} alt='first step' />
-              <p>04</p>
-            </div>
-            <h3>Step 04</h3>
-            <p>
-              Organically grown crops tend use natural fertilizers like manure
-              to improve growth to plant .
-            </p>
-          </div>
-        </div>
-      </section>
-
+      {/* CUSTOMER REVIEWS SECTION */}
       <section className='customer-reviews'>
-        <h6>Working Process</h6>
-        <h2>How Does We Work</h2>
+        <h6>Client Satisfait</h6>
+        <h2>What Client's Say</h2>
         <div className='cont'>
           <div className='color-mix'>
             <span className='first'></span>

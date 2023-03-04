@@ -1,0 +1,100 @@
+    .organic-food {
+        padding: 120px 14px;
+        @include flex(flex-start, space-between, column);
+
+        .hero {
+            width: 100%;
+        }
+
+        .info {
+            width: 100%;
+            margin-top: 30px;
+
+            h6 {
+                color: $primaryColor;
+                font-size: 0.8rem;
+                font-weight: 300;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                margin: 5px 0;
+                font-weight: 600;
+            }
+
+            h4 {
+                margin: 10px 0;
+                font-weight: 500;
+            }
+
+            p {
+                margin-bottom: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+
+    @include for-phones {
+        .organic-food {
+            padding: 120px 24px;
+        }
+    }
+
+    @include for-tablet-potrait-up {
+        .organic-food {
+            padding: 120px 40px;
+
+            .info {
+                h6 {
+                    font-weight: 400;
+                }
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+                h4 {
+                    font-size: 1.2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    @include for-tablet-landscape-up {
+        .organic-food {
+            padding: 120px 60px;
+        }
+    }
+
+    @include for-desktop-up {
+        .organic-food {
+            padding: 120px 100px;
+            @include flex(flex-start, space-between, row);
+
+            .hero {
+                width: 50%;
+                height: 480px;
+            }
+
+            .info {
+                width: 50%;
+                padding: 0 30px;
+                margin-top: 0;
+
+                h6 {
+                    font-size: 1rem;
+                }
+
+                h2 {
+                    font-size: 2.1rem;
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+
+    @include for-big-desktop-up {}

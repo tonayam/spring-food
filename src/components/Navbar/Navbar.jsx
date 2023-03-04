@@ -12,7 +12,9 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className='logo'>Spring Food</div>
+      <Link to='/' className='logo'>
+        Spring Food
+      </Link>
       <ul className={`links ${showNavbar ? `show` : null}`}>
         <li>
           <Link to='/' onClick={closeNav}>

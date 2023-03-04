@@ -11,6 +11,9 @@
 @import "../components/Navbar/navbar";
 @import "../components/Footer/footer";
 @import "../components/Page-Header/page-header";
+@import "../components/Organic-Food/organic-food";
+@import "../components/Services-We-Offer/services-we-offer";
+@import "../components/Working-Process/working-process";
 
 
 
@@ -21,6 +24,7 @@
 @import "../pages/Contact/contact";
 @import "../pages/Gallery/gallery";
 @import "../pages/Services/services";
+@import "../pages/Home/home";
 
 
 
@@ -42,6 +46,7 @@ body {
 p {
     color: #61657a;
     line-height: 26px;
+    font-weight: 300;
 }
 
 

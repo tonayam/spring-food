@@ -1,0 +1,424 @@
+.home-page {
+
+    // HEADER SECTION
+    .header {
+        margin-top: 70px;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+
+        .first-slide,
+        .second-slide {
+            @include flex(center, center, column);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right;
+            height: 100%;
+            padding: 100px 14px;
+            position: absolute;
+            opacity: 0;
+            transition: 0.5s linear all;
+
+            .text {
+                text-align: right;
+
+                .cont {
+                    @include flex(center, flex-end, row);
+
+                    h4 {
+                        margin-right: 10px;
+                        color: $primaryColor;
+                        font-size: 0.8rem;
+
+                    }
+                }
+
+                h1 {
+                    font-size: 2rem;
+                    margin-bottom: 16px;
+                }
+
+                button {
+                    border-radius: 0;
+                    margin-top: 20px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                }
+            }
+
+            &.active {
+                opacity: 1;
+            }
+        }
+
+        .second-slide {
+            @include flex(flex-start, center, column);
+            background-position: left;
+
+            .text {
+                text-align: left;
+
+                .cont {
+                    @include flex(center, flex-start, row);
+                }
+            }
+        }
+    }
+
+    // SEND US A MESSAGE SECTION
+    .send-us-a-message {
+        padding: 100px 14px;
+        background: #F6F8FF;
+
+        h6 {
+            color: $primaryColor;
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 5px 0;
+            font-weight: 600;
+        }
+
+        .container {
+            margin-top: 50px;
+
+            form {
+                width: 100%;
+
+                input {
+                    height: 50px;
+                    width: 100%;
+                    background: transparent;
+                    border: 1px solid black;
+                    margin-bottom: 30px;
+                    padding: 5px 15px;
+                    line-height: 38px;
+                    border: 1px solid #9da7ae;
+
+                    &:focus {
+                        border: 1px solid $primaryColor;
+                    }
+                }
+
+                textarea {
+                    background: transparent;
+                    width: 100%;
+                    resize: none;
+                    border: 1px solid #9da7ae;
+                    height: 150px;
+                    margin-bottom: 30px;
+                    padding: 5px 15px;
+
+                    &:focus {
+                        border: 1px solid $primaryColor;
+                    }
+                }
+            }
+
+            .image {
+                display: none;
+            }
+        }
+    }
+
+    // WHY CHOOSE US SECTION
+    .why-choose-us {
+        .hero-image {
+            display: none;
+        }
+
+        .info {
+            background-image: url(../../assets/why_choose_bg.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            color: #ffffff;
+            padding: 100px 14px;
+
+            h6 {
+                font-size: 0.8rem;
+                font-weight: 400;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                margin: 5px 0;
+                font-weight: 600;
+            }
+
+            .cont {
+                margin-bottom: 50px;
+
+                .color-mix {
+
+                    .first {
+                        background: #ffffff;
+                    }
+
+                    .second {
+                        background: #9da7ae;
+                    }
+                }
+            }
+
+            .reason {
+                margin-bottom: 40px;
+                @include flex(flex-start, flex-start, row);
+
+                svg {
+                    font-size: 6rem;
+                    margin-right: 20px;
+                    @include flex(flex-start, center, row);
+                }
+
+                .text {
+                    p {
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include for-phones {
+    .home-page {
+
+        // HEADER SECTION
+        .header {
+
+            .first-slide,
+            .second-slide {
+                padding: 100px 24px;
+            }
+        }
+
+        // SEND US A MESSAGE SECTION
+        .send-us-a-message {
+            padding: 100px 24px;
+        }
+
+        // WHY CHOOSE US SECTION
+        .why-choose-us {
+
+            .info {
+                padding: 100px 24px;
+            }
+        }
+    }
+}
+
+@include for-tablet-potrait-up {
+    .home-page {
+
+        // HEADER SECTION
+        .header {
+            height: 600px;
+
+            .first-slide,
+            .second-slide {
+                @include flex(flex-end, center, column);
+                background-position: center;
+                padding: 100px 40px;
+
+                .text {
+                    width: 70%;
+
+                    .cont {
+                        @include flex(center, flex-end, row);
+
+                        h4 {
+                            font-size: 1rem;
+                        }
+                    }
+
+                    h1 {
+                        font-size: 2.8rem;
+                    }
+
+                    button {
+                        padding-top: 16px;
+                        padding-bottom: 16px;
+                    }
+                }
+            }
+
+            .second-slide {
+                @include flex(flex-start, center, column);
+
+                .text {
+                    .cont {
+                        @include flex(center, flex-start, row);
+                    }
+                }
+            }
+        }
+
+        // SEND US A MESSAGE SECTION
+        .send-us-a-message {
+            padding: 100px 40px;
+
+            h6 {
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+
+            h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        // WHY CHOOSE US SECTION
+        .why-choose-us {
+            .info {
+                padding: 100px 40px;
+
+                h6 {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    text-align: center;
+                }
+
+                h2 {
+                    font-size: 2.3rem;
+                    text-align: center;
+                }
+
+                .cont {
+                    @include flex(center, center, row);
+                }
+            }
+        }
+    }
+}
+
+@include for-tablet-landscape-up {
+    .home-page {
+
+        // HEADER SECTION
+        .header {
+
+            .first-slide,
+            .second-slide {
+                padding: 100px 60px;
+            }
+        }
+
+        // SEND US A MESSAGE SECTION
+        .send-us-a-message {
+            padding: 100px 60px;
+        }
+
+        // WHY CHOOSE US SECTION
+        .why-choose-us {
+            .info {
+                padding: 100px 60px;
+            }
+        }
+    }
+}
+
+@include for-desktop-up {
+    .home-page {
+
+        // HEADER SECTION
+        .header {
+            margin-top: 90px;
+            height: 700px;
+
+            .first-slide,
+            .second-slide {
+                @include flex(flex-end, center, column);
+                background-position: center;
+                padding: 100px;
+
+                .text {
+                    width: 50%;
+
+                    h1 {
+                        font-size: 3rem;
+                    }
+
+                    button {
+                        padding-top: 16px;
+                        padding-bottom: 16px;
+                    }
+                }
+            }
+
+            .second-slide {
+                @include flex(flex-start, center, column);
+                background-position: center;
+            }
+        }
+
+        // SEND US A MESSAGE SECTION
+        .send-us-a-message {
+            padding: 100px 0 100px 100px;
+            margin-left: 100px;
+
+            h6 {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+                margin: 10px 0;
+            }
+
+            .container {
+                margin-top: 0;
+                @include flex(center, space-between, row);
+
+                form {
+                    width: 50%;
+                }
+
+                .image {
+                    @include flex(center, center, row);
+                }
+            }
+        }
+
+        // WHY CHOOSE US SECTION
+        .why-choose-us {
+            @include flex(center, flex-start, row);
+            height: 700px;
+            position: relative;
+            margin-bottom: 60px;
+
+            .hero-image {
+                @include flex(center, center, row);
+                width: 50%;
+            }
+
+            .info {
+                position: absolute;
+                bottom: 50px;
+                right: 50px;
+                padding: 40px 60px;
+                width: 50%;
+
+                h6 {
+                    font-size: 1.3rem;
+                    text-align: start;
+                }
+
+                h2 {
+                    font-size: 2.5rem;
+                    text-align: start;
+                }
+
+                .cont {
+                    margin-bottom: 50px;
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}
+
+@include for-big-desktop-up {}

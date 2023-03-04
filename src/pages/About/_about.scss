@@ -1,42 +1,5 @@
 .about-page {
 
-    // INTRODUCTION SECTION
-    .intro {
-        padding: 120px 14px;
-        @include flex(flex-start, space-between, column);
-
-        .hero {
-            width: 100%;
-        }
-
-        .info {
-            width: 100%;
-            margin-top: 30px;
-
-            h6 {
-                color: $primaryColor;
-                font-size: 0.8rem;
-                font-weight: 300;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-                margin: 5px 0;
-                font-weight: 600;
-            }
-
-            h4 {
-                margin: 10px 0;
-                font-weight: 600;
-            }
-
-            p {
-                margin-bottom: 20px;
-                line-height: 28px;
-            }
-        }
-    }
-
     // OUR TEAM
     .our-team {
         background-image: url(../../assets/our-team-bg.jpg);
@@ -136,77 +99,6 @@
             }
         }
 
-    }
-
-    // WORKING PROCESS
-    .working-process {
-        padding: 50px 14px;
-
-        h6 {
-            color: $primaryColor;
-            font-size: 0.8rem;
-            font-weight: 400;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            margin: 5px 0;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .cont {
-            @include flex(center, center, row);
-        }
-
-        .process {
-            @include grid(1, 1fr, 10px);
-            margin-top: 40px;
-
-            .step {
-                @include flex(center, center, column);
-                margin: 20px 0;
-
-                .img {
-                    position: relative;
-                    width: 100px;
-                    height: 100px;
-
-                    img {
-                        width: 100%;
-                    }
-
-                    p {
-                        position: absolute;
-                        border-radius: 50%;
-                        background: #ffffff;
-                        top: 0;
-                        left: 50%;
-                        border-radius: 50%;
-                        box-shadow: 0px 2px 10px 0px #bbb3b3;
-                        width: 30px;
-                        line-height: 30px;
-                        text-align: center;
-                        margin-left: -50px;
-                    }
-                }
-
-                h3 {
-                    font-size: 1.4rem;
-                    font-weight: 500;
-                    margin: 10px 0;
-                }
-
-                p {
-                    text-align: center;
-                }
-
-                .curved-arrow {
-                    display: none;
-                }
-            }
-        }
     }
 
     // CUSTOMER REVIEWS
@@ -327,11 +219,6 @@
             padding: 120px 24px;
         }
 
-        // WORKING PROCESS
-        .working-process {
-            padding: 50px 24px;
-        }
-
         // CUSTOMER REVIEWS
         .customer-reviews {
             padding: 100px 24px;
@@ -341,30 +228,6 @@
 
 @include for-tablet-potrait-up {
     .about-page {
-
-        // INTRODUCTION SECTION
-        .intro {
-            padding: 120px 40px;
-
-            .info {
-                h6 {
-                    font-size: 1.2rem;
-                    font-weight: 400;
-                }
-
-                h2 {
-                    font-size: 2.3rem;
-                }
-
-                h4 {
-                    font-size: 1.3rem;
-                }
-
-                p {
-                    font-size: 1.2rem;
-                }
-            }
-        }
 
         // OUR TEAM
         .our-team {
@@ -381,24 +244,6 @@
 
             .team {
                 @include grid(3, 1fr, 20px);
-            }
-        }
-
-        // WORKING PROCESS
-        .working-process {
-            padding: 50px 40px;
-
-            h6 {
-                font-size: 1.2rem;
-                font-weight: 400;
-            }
-
-            h2 {
-                font-size: 2.3rem;
-            }
-
-            .process {
-                @include grid(2, 1fr, 40px);
             }
         }
 
@@ -507,19 +352,9 @@
 @include for-tablet-landscape-up {
     .about-page {
 
-        // INTRODUCTION SECTION
-        .intro {
-            padding: 120px 60px;
-        }
-
         // OUR TEAM
         .our-team {
             padding: 120px 60px;
-        }
-
-        // WORKING PROCESS
-        .working-process {
-            padding: 50px 60px;
         }
 
         // CUSTOMER REVIEWS
@@ -531,32 +366,6 @@
 
 @include for-desktop-up {
     .about-page {
-
-        // INTRODUCTION SECTION
-        .intro {
-            padding: 120px 100px;
-            @include flex(flex-start, space-between, row);
-
-            .hero {
-                width: 50%;
-                height: 480px;
-            }
-
-            .info {
-                width: 50%;
-                padding: 0 30px;
-                margin-top: 0;
-
-                h6 {
-                    font-size: 1.3rem;
-                }
-
-                h2 {
-                    font-size: 2.5rem;
-                    margin: 10px 0;
-                }
-            }
-        }
 
         // OUR TEAM
         .our-team {
@@ -581,39 +390,6 @@
                             border-radius: 50%;
                             object-fit: contain;
                         }
-                    }
-                }
-            }
-        }
-
-        // WORKING PROCESS
-        .working-process {
-            padding: 100px;
-
-            h6 {
-                font-size: 1.3rem;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-                margin: 10px 0;
-            }
-
-            .process {
-                @include grid(4, 1fr, 30px);
-
-
-                .step {
-                    position: relative;
-
-                    .curved-arrow {
-                        display: block;
-                        position: absolute;
-                        width: 120px;
-                        height: 50px;
-                        right: -80px;
-                        top: 30px;
-                        object-fit: contain;
                     }
                 }
             }

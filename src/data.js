@@ -14,6 +14,9 @@ import service1 from './assets/service1.jpg';
 import service2 from './assets/service2.jpg';
 import service3 from './assets/service3.jpg';
 
+import homeHeader1 from './assets/home-header1.jpg';
+import homeHeader2 from './assets/home-header2.jpg';
+
 export const reviews = [
   {
     text: `Organically grown crops tend use natural fertilizer like manure to improve growth to plant as amet cons adip scing elited id lectus quis dui euismod con after.`,
@@ -107,5 +110,23 @@ export const services = [
     name: `Fresh Fruits`,
     desc: `Organically grown crops tend use natural fertilizers like manure to improve growth to plant . Animals raised organically are.`,
     image: service3,
+  },
+];
+
+export const homeHeaders = [
+  {
+    subTitle: `Professional Cleaning Services`,
+    title: `Organic Products Grown With Love.`,
+    info: `As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cueligendi adisci sed altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.`,
+    image: homeHeader1,
+    slideClass: `first-slide`,
+  },
+
+  {
+    subTitle: `Professional Cleaning Services`,
+    title: `A Huge Variety Fruits & Vegetables..`,
+    info: `As quas equidem noluisse et, ex pro semper fierent oporteat. Te epic urei ullam corper usu, eos et voluptaria rationibus. Usu cueligendi adisci sed altera dae reformidans ea, inermis ration ibus necessitatibus eu eum.`,
+    image: homeHeader2,
+    slideClass: `second-slide`,
   },
 ];
