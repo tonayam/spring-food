@@ -1,29 +1,54 @@
 import React, { useEffect, useState } from 'react';
 import PageHeader from '../../components/Page-Header/PageHeader';
 import { useGlobalContext } from '../../context/Context';
-import { productFilters, allproducts } from '../../data';
 import { IoIosResize } from 'react-icons/io';
+import { FaChevronLeft, FaChevronRight, FaTimes } from 'react-icons/fa';
 
 const Gallery = () => {
-  const { resetPage } = useGlobalContext();
+  const {
+    resetPage,
+    products,
+    setSelectedProduct,
+    showImagesViewer,
+    setShowImagesViewer,
+  } = useGlobalContext();
   const [index, setIndex] = useState(0);
-  const [products, setProducts] = useState(allproducts);
+  const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
     resetPage();
     // eslint-disable-next-line
   }, []);
 
+  useEffect(() => {
+    setAllProducts(products);
+  }, [products]);
+
+  // GET FILTER CATEGORIES
+  const productFilters = [...products].reduce(
+    (categoriesArr, item) => {
+      if (!categoriesArr.includes(item.productCategory)) {
+        categoriesArr.push(item.productCategory);
+      }
+
+      return categoriesArr;
+    },
+    ['all']
+  );
+
   const filterProducts = (e) => {
     const clicked = e.target.textContent;
-    if (clicked === `All`) {
-      setProducts(allproducts);
+
+    if (clicked === `all`) {
+      setAllProducts(products);
     } else {
-      const tempProducts = allproducts.filter(
-        (product) =>
-          product.category.toLocaleLowerCase() === clicked.toLocaleLowerCase()
-      );
-      setProducts(tempProducts);
+      const tempProducts = products.filter((product) => {
+        return (
+          product.productCategory.toLocaleLowerCase() ===
+          clicked.toLocaleLowerCase()
+        );
+      });
+      setAllProducts(tempProducts);
     }
   };
 
@@ -58,24 +83,73 @@ const Gallery = () => {
         </div>
 
         <div className='products'>
-          {products.map((product, productIndex) => {
-            const { category, name, image } = product;
+          {allProducts.map((product, productIndex) => {
+            const { productName, productQuantity, images, productCategory } =
+              product;
             return (
               <div className='product' key={productIndex}>
                 <div className='img'>
-                  <img src={image} alt={name} />
+                  <img
+                    src={images[0]}
+                    alt={productName}
+                    onClick={() => {
+                      setSelectedProduct(products[productIndex].images);
+                      setShowImagesViewer(true);
+                    }}
+                  />
                 </div>
                 <div className='details'>
-                  <IoIosResize />
-                  <h3>{name}</h3>
-                  <p>Category : {category}</p>
+                  <IoIosResize
+                    onClick={() => {
+                      setSelectedProduct(products[productIndex].images);
+                      setShowImagesViewer(true);
+                    }}
+                  />
+                  <h3>{productName}</h3>
+                  <p>Category : {productCategory}</p>
+                  <p>Quauntity in stock : {productQuantity}</p>
                 </div>
               </div>
             );
           })}
         </div>
+
+        {showImagesViewer ? <ImagesViewer /> : null}
       </section>
     </main>
+  );
+};
+
+const ImagesViewer = () => {
+  const { selectedProduct, setShowImagesViewer } = useGlobalContext();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    setCurrentIndex((oldValue) => oldValue + 1);
+    if (currentIndex === selectedProduct.length - 1) {
+      setCurrentIndex(0);
+    }
+  };
+  const handlePrev = () => {
+    setCurrentIndex((oldValue) => oldValue - 1);
+    if (currentIndex === 0) {
+      setCurrentIndex(selectedProduct.length - 1);
+    }
+  };
+
+  return (
+    <section className='images-viewer'>
+      <div className='close-btn'>
+        <FaTimes onClick={() => setShowImagesViewer(false)} />
+      </div>
+      <div className='img'>
+        <img src={selectedProduct[currentIndex]} alt='' />
+      </div>
+      <div className='btns'>
+        <FaChevronLeft className='left' onClick={handlePrev} />
+        <FaChevronRight className='right' onClick={handleNext} />
+      </div>
+    </section>
   );
 };
 
