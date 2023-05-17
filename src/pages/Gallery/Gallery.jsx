@@ -68,7 +68,7 @@ const Gallery = () => {
         <div className='filters'>
           {productFilters.map((filter, filterIndex) => {
             return (
-              <button
+              <div
                 key={filterIndex}
                 className={index === filterIndex ? `green` : null}
                 onClick={(e) => {
@@ -77,7 +77,7 @@ const Gallery = () => {
                 }}
               >
                 {filter}
-              </button>
+              </div>
             );
           })}
         </div>
