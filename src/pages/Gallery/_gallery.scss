@@ -30,7 +30,6 @@
                 border: 1px solid #ccd2d7;
                 font-size: 15px;
                 margin: 0 10px;
-                padding: 10px 12px;
 
                 &:first-child {
                     margin-left: 0;
@@ -128,6 +127,7 @@
 
             .images-viewer {
                 .close-btn {
+                    position: absolute;
                     top: 15px;
                     right: 19px;
                 }
