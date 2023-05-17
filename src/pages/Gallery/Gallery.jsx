@@ -33,13 +33,13 @@ const Gallery = () => {
 
       return categoriesArr;
     },
-    ['all']
+    ['All']
   );
 
   const filterProducts = (e) => {
     const clicked = e.target.textContent;
 
-    if (clicked === `all`) {
+    if (clicked === `All`) {
       setAllProducts(products);
     } else {
       const tempProducts = products.filter((product) => {
