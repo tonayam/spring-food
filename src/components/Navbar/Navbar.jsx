@@ -2,6 +2,7 @@ import React from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../../context/Context';
+import logo from '../../assets/logo.svg';
 
 const Navbar = () => {
   const { setShowNavbar, showNavbar } = useGlobalContext();
@@ -13,7 +14,7 @@ const Navbar = () => {
   return (
     <nav>
       <Link to='/' className='logo'>
-        Spring Food
+        <img src={logo} alt='spring foods logo' />
       </Link>
       <ul className={`links ${showNavbar ? `show` : null}`}>
         <li>
