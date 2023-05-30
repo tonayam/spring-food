@@ -61,7 +61,11 @@ nav {
         padding: 0 24px;
 
         .logo {
-            width: 120px;
+            width: 110px;
+
+            img {
+                object-fit: scale-down;
+            }
         }
     }
 }
